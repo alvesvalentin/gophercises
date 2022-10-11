@@ -16,7 +16,7 @@ func exercises() {
 
 	flag.Parse()
 
-	file, err := os.Open("quiz_game/" + *commandFlag)
+	file, err := os.Open("01_quiz_game/" + *commandFlag)
 	if err != nil {
 		log.Fatalf("error opening %s", *commandFlag)
 	}
