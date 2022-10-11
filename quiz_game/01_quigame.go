@@ -12,16 +12,13 @@ func main() {
 	exercises()
 }
 func exercises() {
-	fmt.Println("hello world !")
-	s := flag.String("csv-file", "problems.csv", "CSV file flag")
+	commandFlag := flag.String("csv-file", "problems.csv", "CSV file commandFlag")
 
 	flag.Parse()
 
-	fmt.Println(*s)
-
-	file, err := os.Open("quiz_game/" + *s)
+	file, err := os.Open("quiz_game/" + *commandFlag)
 	if err != nil {
-		log.Fatalf("error opening %s", *s)
+		log.Fatalf("error opening %s", *commandFlag)
 	}
 
 	reader := csv.NewReader(file)
